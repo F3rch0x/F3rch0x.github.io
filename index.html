@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>David Cadena · Proyectos</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Proyectos web de David Fernando Cadena Cortes: publicidad, utilidad y registro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  /* Layout: una columna tipo "terminal de bitácora" — encabezado, luego tres proyectos como filas de un listado */
+  :root {
+    --bg: #f3f5f7; --surface: #ffffff; --fg: #17202a; --muted: #5b6875;
+    --line: #d8dee5; --accent: #0f7b6c; --accent-ink: #ffffff; --chip: #e5f2ef;
+    --display: "Familjen Grotesk", "Segoe UI", system-ui, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+    --bg: #0e1418; --surface: #151d23; --fg: #e4ebf0; --muted: #93a2ae;
+    --line: #26323b; --accent: #3cc4ae; --accent-ink: #06201b; --chip: #15302b; color-scheme: dark } }
+  :root[data-theme="dark"] {
+    --bg: #0e1418; --surface: #151d23; --fg: #e4ebf0; --muted: #93a2ae;
+    --line: #26323b; --accent: #3cc4ae; --accent-ink: #06201b; --chip: #15302b; color-scheme: dark }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 var(--display);
+    padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .wrap { max-width: 860px; margin: 0 auto; padding-block: 56px 72px; display: grid; gap: 48px; }
+  header { display: grid; gap: 14px; }
+  .prompt { font: 500 13px var(--mono); color: var(--accent); letter-spacing: .02em; }
+  h1 { font-size: clamp(2rem, 6vw, 3.4rem); line-height: 1.05; margin: 0; text-wrap: balance; letter-spacing: -.02em; }
+  .lead { color: var(--muted); max-width: 60ch; margin: 0; font-size: 1.08rem; }
+  .links { display: flex; flex-wrap: wrap; gap: 10px; font: 14px var(--mono); }
+  .links a { color: var(--fg); text-decoration: none; border: 1px solid var(--line); padding: 6px 12px; border-radius: 6px; background: var(--surface); }
+  .links a:hover, .links a:focus-visible { border-color: var(--accent); outline: none; }
+  h2 { font: 500 12px var(--mono); text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin: 0 0 12px; }
+  .list { border-top: 1px solid var(--line); }
+  .item { display: grid; grid-template-columns: 7.5rem 1fr auto; gap: 8px 24px; align-items: baseline;
+    padding-block: 22px; border-bottom: 1px solid var(--line); text-decoration: none; color: inherit; }
+  .item:hover h3, .item:focus-visible h3 { color: var(--accent); }
+  .item:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+  .tag { font: 500 12px var(--mono); color: var(--accent); background: var(--chip); padding: 3px 8px; border-radius: 4px; justify-self: start; }
+  .item h3 { margin: 0 0 4px; font-size: 1.35rem; transition: color .15s; }
+  .item p { margin: 0; color: var(--muted); max-width: 58ch; min-width: 0; }
+  .stack { font: 12px var(--mono); color: var(--muted); margin-top: 8px; }
+  .go { font: 500 14px var(--mono); color: var(--accent); white-space: nowrap; }
+  footer { font: 13px var(--mono); color: var(--muted); }
+  @media (max-width: 640px) {
+    .item { grid-template-columns: 1fr; }
+    .go { justify-self: start; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="prompt">~/F3rch0x $ ls proyectos/</div>
+    <h1>David Fernando Cadena Cortes</h1>
+    <p class="lead">TSU en Desarrollo de Software Multiplataforma y estudiante de Ingeniería en Desarrollo y Gestión de Software (UTCGG). Me interesan Linux, DevOps y el desarrollo web. Estos son tres proyectos web hechos con HTML, CSS y JavaScript, sin frameworks.</p>
+    <nav class="links" aria-label="Contacto">
+      <a href="https://github.com/F3rch0x">github.com/F3rch0x</a>
+      <a href="https://link.me/f3rch_0">link.me/f3rch_0</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Proyectos</h2>
+    <div class="list">
+      <a class="item" href="anoiacraft/index.html">
+        <span class="tag">publicidad</span>
+        <div>
+          <h3>AnoiaCraft</h3>
+          <p>Landing page para mi servidor de Minecraft auto-alojado: características, cómo entrar paso a paso y estado del servidor.</p>
+          <div class="stack">HTML · CSS · JavaScript</div>
+        </div>
+        <span class="go">abrir →</span>
+      </a>
+      <a class="item" href="subredes/index.html">
+        <span class="tag">utilidad</span>
+        <div>
+          <h3>Calculadora de Subredes IPv4</h3>
+          <p>Escribe una IP con su prefijo y obtén red, broadcast, rango de hosts, máscara, wildcard y la vista en binario. También divide una red en subredes iguales.</p>
+          <div class="stack">JavaScript · operaciones a nivel de bits</div>
+        </div>
+        <span class="go">abrir →</span>
+      </a>
+      <a class="item" href="registro/index.html">
+        <span class="tag">registro</span>
+        <div>
+          <h3>Bitácora de Estadía</h3>
+          <p>App con registro e inicio de sesión para llevar las horas y actividades de la estadía profesional, con progreso hacia la meta de horas.</p>
+          <div class="stack">JavaScript · Web Crypto (SHA-256) · localStorage</div>
+        </div>
+        <span class="go">abrir →</span>
+      </a>
+    </div>
+  </section>
+
+  <footer>Publicado con GitHub Pages · 2026</footer>
+</div>
+</body>
+</html>
